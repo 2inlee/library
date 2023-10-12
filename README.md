@@ -17,5 +17,5 @@
 ### 1. 프로젝트 클론
 
 ```bash
-git clone [repository-url]
-cd [repository-directory]
+git clone https://github.com/2inlee/library.git
+cd https://github.com/2inlee/library.git
