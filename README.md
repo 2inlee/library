@@ -19,3 +19,12 @@
 ```bash
 git clone https://github.com/2inlee/library.git
 cd https://github.com/2inlee/library.git
+
+```
+
+### 2. Git diff 연습하기
+
+```bash
+git diff
+
+```
