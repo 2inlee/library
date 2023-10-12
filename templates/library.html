@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>도서관 관리 시스템</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>도서관리시스템 - 관리자</h1>
+
+    <h2>멤버추가</h2>
+    <form action="/add_member" method="post">
+        이름: <input type="text" name="member_name"><br>
+        전화번호: <input type="text" name="member_phone"><br>
+        <input type="submit" value="멤버 추가">
+    </form>
+
+    <h2>멤버 삭제</h2>
+    <form action="/delete_member" method="post">
+        이름: <input type="text" name="member_name"><br>
+        <input type="submit" value="멤버 삭제">
+    </form>
+
+    <h2>책 추가</h2>
+    <form action="/add_book" method="post">
+        제목: <input type="text" name="book_title"><br>
+        <input type="submit" value="책 추가">
+    </form>
+
+    <h2>책 삭제</h2>
+    <form action="/delete_book" method="post">
+        제목: <input type="text" name="book_title"><br>
+        <input type="submit" value="책 삭제">
+    </form>
+
+    <h2>책 대출</h2>
+    <form action="/borrow_book" method="post">
+        멤버 이름: <input type="text" name="member_name"><br>
+        책 제목: <input type="text" name="book_title"><br>
+        <input type="submit" value="책 대출">
+    </form>
+
+    <h2>책 반납</h2>
+    <form action="/return_book" method="post">
+        멤버 이름: <input type="text" name="member_name"><br>
+        책 제목: <input type="text" name="book_title"><br>
+        <input type="submit" value="책 반납">
+    </form>
+
+    <h2>현재 상태</h2>
+    <button onclick="fetchStatus()">상태 확인</button>
+    <pre id="status"></pre>
+
+    <script>
+        function fetchStatus() {
+            fetch('/status')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('status').textContent = JSON.stringify(data, null, 2);
+                });
+        }
+    </script>
+</body>
+</html>
