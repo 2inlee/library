@@ -50,7 +50,6 @@ def evaluate_expression(expression):
     
     return tokens[0]
 
-# Let's test the evaluate_expression function with the given example "3+5*3"
-expression_input = "8*3+2/2"
+expression_input = "8*3+2/2+2"
 result = evaluate_expression(expression_input)
 print(result)
