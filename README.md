@@ -28,3 +28,4 @@ cd https://github.com/2inlee/library.git
 git diff
 
 ```
+### 3.merge
